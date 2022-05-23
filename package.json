@@ -1,0 +1,49 @@
+{
+  "name": "solana-pay-chef-project",
+  "version": "0.8.2",
+  "author": "Fernando Lopez <fer_ragnar19@gmail.com>",
+  "repository": "https://github.com/Beor18",
+  "license": "Apache-2.0",
+  "files": [
+    "src",
+    ".gitignore",
+    "LICENSE",
+    "package.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "shx rm -rf .next",
+    "dev": "next dev",
+    "build": "yarn clean && next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^2.1.0",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@solana/pay": "^0.2.0",
+    "@solana/wallet-adapter-base": "^0.9.4",
+    "@solana/wallet-adapter-react": "^0.15.3",
+    "@solana/wallet-adapter-react-ui": "^0.9.5",
+    "@solana/wallet-adapter-wallets": "^0.16.0",
+    "@solana/web3.js": "^1.36.0",
+    "bignumber.js": "^9.0.2",
+    "crypto-js": "^4.1.1",
+    "framer-motion": "^6.3.3",
+    "ipfs-core": "^0.14.3",
+    "ipfs-http-client": "^56.0.3",
+    "next": "^12.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-loader-spinner": "^6.0.0-0",
+    "styled-components": "^5.3.5"
+  },
+  "devDependencies": {
+    "parcel": "^2.3.1",
+    "prettier": "^2.5.1",
+    "shx": "^0.3.3"
+  }
+}
