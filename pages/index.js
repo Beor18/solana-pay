@@ -52,7 +52,7 @@ const App = () => {
   }, [publicKey])
 
   const renderItemBuyContainer = () => (
-    <SimpleGrid columns={3} spacing={2}>
+    <SimpleGrid columns={{base: 1, sm: 1, md: 3}} spacing={2}>
       {products.map((product) => (
         <Product key={product.id} product={product} />
       ))}
