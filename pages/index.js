@@ -66,6 +66,7 @@ const App = () => {
         <Navbar
           create={creating ? 'Close' : 'Create Product'}
           onClick={() => setCreating(!creating)}
+          isOwner={isOwner}
         />
       {/* )} */}
       <Container maxW="full" bg="#090910" color="#262626">
@@ -85,7 +86,7 @@ const App = () => {
           </Box>
 
           <Box>
-            {creating && <CreateProduct />}
+            {creating && isOwner && <CreateProduct />}
             {renderItemBuyContainer()}
           </Box>
         </Container>

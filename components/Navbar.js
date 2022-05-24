@@ -38,12 +38,12 @@ const NavLink = ({ children }) => (
   </Link>
 )
 
-export default function Navbar({create, onClick}) {
+export default function Navbar({ create, onClick, isOwner }) {
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
-      <Box bg={"#1a202c"} px={4} color="white">
+      <Box bg={'#1a202c'} px={4} color="white">
         <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
           <IconButton
             size={'md'}
@@ -64,9 +64,13 @@ export default function Navbar({create, onClick}) {
               ))}
             </HStack>
           </HStack>
-          <Flex alignItems={'center'} >
-            <ButtonGeneric text={create}  onClick={onClick} />
-          <WalletMultiButton className="cta-button connect-wallet-button" />
+          <Flex alignItems={'center'}>
+            {isOwner ? (
+              <ButtonGeneric text={create} onClick={onClick} />
+            ) : (
+              <div></div>
+            )}
+            <WalletMultiButton className="cta-button connect-wallet-button" />
           </Flex>
         </Flex>
 
