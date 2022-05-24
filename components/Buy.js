@@ -5,6 +5,7 @@ import { useConnection, useWallet } from '@solana/wallet-adapter-react'
 import { InfinitySpin } from 'react-loader-spinner'
 import IPFSDownload from './IpfsDownload'
 import { addOrder, hasPurchased, fetchItem } from '../lib/api'
+import { Button } from '@chakra-ui/react'
 
 const STATUS = {
   Initial: 'Initial',
@@ -23,7 +24,7 @@ export default function Buy({ itemID }) {
 
   const order = useMemo(
     () => ({
-      buyer: publicKey.toString(),
+      buyer: publicKey?.toString(),
       orderID: orderID.toString(),
       itemID: itemID,
     }),
@@ -115,7 +116,7 @@ export default function Buy({ itemID }) {
     }
   }, [status])
 
-  if (!publicKey) {
+  if (!publicKey || publicKey === null) {
     return (
       <div>
         <p>You need to connect your wallet to make transactions</p>
@@ -133,13 +134,18 @@ export default function Buy({ itemID }) {
       {item ? (
         <IPFSDownload hash={item.hash} filename={item.filename} />
       ) : (
-        <button
+        <Button
           disabled={loading}
           className="buy-button"
           onClick={processTransaction}
+          p={1}
+          bg="none"
+          _hover={"none"}
+          fontWeight="none"
+          
         >
-          Buy now 🠚
-        </button>
+          Buy now!
+        </Button>
       )}
     </div>
   )

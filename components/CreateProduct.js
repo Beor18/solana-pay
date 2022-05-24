@@ -1,6 +1,16 @@
 import React, { useState } from 'react'
+import {
+  FormControl,
+  FormLabel,
+  FormErrorMessage,
+  FormHelperText,
+  Input,
+  Button,
+  Textarea,
+  Heading
+} from '@chakra-ui/react'
 import { create } from 'ipfs-http-client'
-import styles from '../styles/CreateProduct.module.css'
+import { Box } from '@chakra-ui/react'
 
 const client = create('https://ipfs.infura.io:5001/api/v0')
 
@@ -51,33 +61,33 @@ const CreateProduct = () => {
   }
 
   return (
-    <div className={styles.background_blur}>
-      <div className={styles.create_product_container}>
-        <div className={styles.create_product_form}>
-          <header className={styles.header}>
-            <h1>Create Product</h1>
-          </header>
-
-          <div className={styles.form_container}>
-            <input
+    <Box >
+      <div>
+        <div>
+        <Heading color="white" fontSize="30px">Create Product</Heading>
+          <br />
+          <FormControl>
+            <Input
               type="file"
-              className={styles.input}
-              accept=".zip,.rar,.7zip"
-              placeholder="Emojis"
+              accept=".jpeg,.jpg,.png"
+              placeholder="Product"
               onChange={onChange}
             />
+            <br/>
             {file.name != null && <p className="file-name">{file.filename}</p>}
-            <div className={styles.flex_row}>
-              <input
-                className={styles.input}
+            <br/>
+            <div>
+              <Input
                 type="text"
                 placeholder="Product Name"
                 onChange={(e) => {
                   setNewProduct({ ...newProduct, name: e.target.value })
                 }}
               />
-              <input
-                className={styles.input}
+              </div>
+              <br/>
+              <div>
+              <Input
                 type="text"
                 placeholder="0.01 USDC"
                 onChange={(e) => {
@@ -85,10 +95,9 @@ const CreateProduct = () => {
                 }}
               />
             </div>
-
-            <div className={styles.flex_row}>
-              <input
-                className={styles.input}
+            <br/>
+            <div>
+              <Input
                 type="url"
                 placeholder="Image URL ex: https://i.imgur.com/rVD8bjt.png"
                 onChange={(e) => {
@@ -96,27 +105,27 @@ const CreateProduct = () => {
                 }}
               />
             </div>
-            <textarea
-              className={styles.text_area}
+            <br/>
+            <Textarea
               placeholder="Description here..."
               onChange={(e) => {
                 setNewProduct({ ...newProduct, description: e.target.value })
               }}
             />
-
-            <button
-              className={styles.button}
+            <br />
+            <br />
+            <Button
               onClick={() => {
                 createProduct()
               }}
               disabled={uploading}
             >
               Create Product
-            </button>
-          </div>
+            </Button>
+          </FormControl>
         </div>
       </div>
-    </div>
+    </Box>
   )
 }
 

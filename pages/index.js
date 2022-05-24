@@ -1,14 +1,23 @@
 import React, { useState, useEffect } from 'react'
+import {
+  Box,
+  Container,
+  Center,
+  Text,
+  Button,
+  Flex,
+  SimpleGrid,
+  Heading,
+} from '@chakra-ui/react'
 import CreateProduct from '../components/CreateProduct'
 import Product from '../components/Product'
 import HeadComponent from '../components/Head'
 
 import { useWallet } from '@solana/wallet-adapter-react'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
-
-// Constants
-const TWITTER_HANDLE = '_buildspace'
-const TWITTER_LINK = `https://twitter.com/${TWITTER_HANDLE}`
+import Footer from '../components/Footer'
+import Navbar from '../components/Navbar'
+import ButtonGeneric from '../components/ButtonGeneric'
 
 const App = () => {
   const { publicKey } = useWallet()
@@ -18,78 +27,71 @@ const App = () => {
   const [creating, setCreating] = useState(false)
   const [products, setProducts] = useState([])
 
-  const renderNotConnectedContainer = () => (
-    <div>
-      <img
-        src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif"
-        alt="emoji"
-      />
+  // const renderNotConnectedContainer = () => (
+  //   <div>
+  //     <img
+  //       src="https://media.giphy.com/media/eSwGh3YK54JKU/giphy.gif"
+  //       alt="emoji"
+  //     />
 
-      <div className="button-container">
-        <WalletMultiButton className="cta-button connect-wallet-button" />
-      </div>
-    </div>
-  )
+  //     <div className="button-container">
+  //       <WalletMultiButton className="cta-button connect-wallet-button" />
+  //     </div>
+  //   </div>
+  // )
 
   useEffect(() => {
-    if (publicKey) {
+    //if (publicKey) {
       fetch(`/api/fetchProducts`)
         .then((response) => response.json())
         .then((data) => {
           setProducts(data)
           console.log('Products', data)
         })
-    }
+    //}
   }, [publicKey])
 
   const renderItemBuyContainer = () => (
-    <div className="products-container">
+    <SimpleGrid columns={3} spacing={2}>
       {products.map((product) => (
         <Product key={product.id} product={product} />
       ))}
-    </div>
+    </SimpleGrid>
   )
 
   return (
-    <div className="App">
+    <Box p={0} m={0} h="100vh">
       <HeadComponent />
-      <div className="container">
-        <header className="header-container">
-          <p className="header"> 😳 Buildspace Emoji Store 😈</p>
-          <p className="sub-text">
-            The only emoji store that accepts shitcoins
-          </p>
+      {/* {isOwner && ( */}
+        <Navbar
+          create={creating ? 'Close' : 'Create Product'}
+          onClick={() => setCreating(!creating)}
+        />
+      {/* )} */}
+      <Container maxW="full" bg="#090910" color="#262626">
+        <Container maxW="container.xl" bg="blackAlpha.700" color="#262626">
+          <Box p={5}>
+            <Heading color="white">
+              <Center>Flower Coffee</Center>
+            </Heading>
+            <br />
+            <Heading color="white">
+              <Center>The Best Coffee of LATAM</Center>
+            </Heading>
 
-          {isOwner && (
-            <button
-              className="create-product-button"
-              onClick={() => setCreating(!creating)}
-            >
-              {creating ? 'Close' : 'Create Product'}
-            </button>
-          )}
-        </header>
+            {/* {isOwner && (
+              <ButtonGeneric text={creating ? 'Close' : 'Create Product'} onClick={() => setCreating(!creating)} />
+            )} */}
+          </Box>
 
-        <main>
-          {creating && <CreateProduct />}
-          {publicKey ? renderItemBuyContainer() : renderNotConnectedContainer()}
-        </main>
-
-        <div className="footer-container">
-          <img
-            alt="Twitter Logo"
-            className="twitter-logo"
-            src="twitter-logo.svg"
-          />
-          <a
-            className="footer-text"
-            href={TWITTER_LINK}
-            target="_blank"
-            rel="noreferrer"
-          >{`built on @${TWITTER_HANDLE}`}</a>
-        </div>
-      </div>
-    </div>
+          <Box>
+            {creating && <CreateProduct />}
+            {renderItemBuyContainer()}
+          </Box>
+        </Container>
+      </Container>
+      <Footer />
+    </Box>
   )
 }
 
