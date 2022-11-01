@@ -9,15 +9,16 @@ import {
   SimpleGrid,
   Heading,
 } from '@chakra-ui/react'
-import CreateProduct from '../components/CreateProduct'
-import Product from '../components/Product'
+import ProductsCreate from '../components/organisms/ProductsCreate'
+import Product from '../components/organisms/Products'
 import HeadComponent from '../components/Head'
 
 import { useWallet } from '@solana/wallet-adapter-react'
 import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
-import Footer from '../components/Footer'
-import Navbar from '../components/Navbar'
-import ButtonGeneric from '../components/ButtonGeneric'
+import Footer from '../components/molecules/Footer'
+import Navbar from '../components/molecules/Navbar'
+import ButtonGeneric from '../components/atoms/Button'
+import { Featured } from '../components/molecules/Featured'
 
 const App = () => {
   const { publicKey } = useWallet()
@@ -69,14 +70,15 @@ const App = () => {
           isOwner={isOwner}
         />
       {/* )} */}
-      <Container maxW="full" bg="#090910" color="#262626">
-        <Container maxW="container.xl" bg="blackAlpha.700" color="#262626">
+      <Featured />
+      <Container maxW="full" bg="#fffef8">
+        <Container maxW="container.xl">
           <Box p={5}>
-            <Heading color="white">
+            <Heading color="#0D2123">
               <Center>Flower Coffee</Center>
             </Heading>
             <br />
-            <Heading color="white">
+            <Heading color="#0D2123">
               <Center>The Best Coffee of LATAM</Center>
             </Heading>
 
@@ -86,7 +88,7 @@ const App = () => {
           </Box>
 
           <Box>
-            {creating && isOwner && <CreateProduct />}
+            {creating && isOwner && <ProductsCreate />}
             {renderItemBuyContainer()}
           </Box>
         </Container>

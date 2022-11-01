@@ -14,7 +14,7 @@ import { Box } from '@chakra-ui/react'
 
 const client = create('https://ipfs.infura.io:5001/api/v0')
 
-const CreateProduct = () => {
+export const ProductsCreate = () => {
   const [newProduct, setNewProduct] = useState({
     name: '',
     price: '',
@@ -128,5 +128,3 @@ const CreateProduct = () => {
     </Box>
   )
 }
-
-export default CreateProduct

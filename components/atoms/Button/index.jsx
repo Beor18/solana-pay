@@ -1,7 +1,7 @@
 import react from 'react'
 import { Button } from '@chakra-ui/button'
 
-const ButtonGeneric = ({ onClick, text, width }) => {
+export const ButtonGeneric = ({ onClick, text, width }) => {
   return (
     <Button
       w={width}
@@ -19,5 +19,3 @@ const ButtonGeneric = ({ onClick, text, width }) => {
     </Button>
   )
 }
-
-export default ButtonGeneric

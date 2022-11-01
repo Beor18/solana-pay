@@ -45,8 +45,8 @@ import { ReactNode } from 'react'
 export default function Footer() {
   return (
     <Box
-    bg={"#1a202c"}
-      color={"white"}
+    bg={"#f8cfa9"}
+      color={"blackAlpha.800"}
     >
       <Container
         as={Stack}
