@@ -4,8 +4,8 @@ import { createTransferCheckedInstruction, getAssociatedTokenAddress, getMint } 
 import BigNumber from "bignumber.js";
 import products from "./products.json";
 
-const usdcAddress = new PublicKey("4zMMC9srt5Ri5X14GAgXhaHii3GnPAEERYPJgZJDncDU");
-const sellerAddress = "12ofiQ5EFoxTv6qBWwtMkPPVRqPPdGQTY91qfRTnMupN";
+const usdcAddress = new PublicKey("FLWRna1gxehQ9pSyZMzxfp4UhewvLPwuKfdUTgdZuMBY");
+const sellerAddress = "D1Kfd1XNeFpcxHMAw6yCfqvYgoqXug8rqwNKX3ycPhit";
 const sellerPublicKey = new PublicKey(sellerAddress);
 
 const createTransaction = async (req, res) => {
