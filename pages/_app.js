@@ -19,7 +19,7 @@ import '@solana/wallet-adapter-react-ui/styles.css'
 
 const App = ({ Component, pageProps }) => {
   // Can be set to 'devnet', 'testnet', or 'mainnet-beta'
-  const network = WalletAdapterNetwork.Devnet
+  const network = WalletAdapterNetwork.Mainnet
 
   const endpoint = useMemo(() => clusterApiUrl(network), [network])
 
