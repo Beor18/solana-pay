@@ -21,7 +21,7 @@ import {
     Container,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import ButtonGeneric from '../../atoms/Button';
+import { ButtonGeneric } from '../../atoms/Button';
 
 const Links = ['Home'];
 
@@ -40,7 +40,7 @@ const NavLink = ({ children }) => (
     </Link>
 );
 
-export default function Navbar({ create, onClick, isOwner }) {
+export const Navbar = ({ create, onClick, isOwner }) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
@@ -92,4 +92,4 @@ export default function Navbar({ create, onClick, isOwner }) {
             </Container>
         </Box>
     );
-}
+};
