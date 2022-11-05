@@ -48,5 +48,12 @@
     "price": "0.02",
     "image_url": "https://media.discordapp.net/attachments/862081230212169758/978783723141099560/IMG_6190.png",
     "description": "dsfsdfsdf"
+  },
+  {
+    "id": 7,
+    "name": "Chef test",
+    "price": "0.02",
+    "image_url": "https://onlinepngtools.com/images/examples-onlinepngtools/black-white-grid.png",
+    "description": "dfsdfsdfdfsdfsdf"
   }
 ]
