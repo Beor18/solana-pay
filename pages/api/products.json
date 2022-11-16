@@ -1,59 +1,9 @@
 [
   {
-    "id": 1,
-    "name": "OG Emoji pack",
-    "price": "0.09",
-    "description": "Get this fire emoji pack for only $0.09! Includes 3 hot emojis: Forreal, Flooshed, and Sheesh!",
-    "image_url": "https://media.discordapp.net/attachments/862081230212169758/978783722922987560/IMG_6189.jpg",
-    "filename": "Emojis.zip",
-    "hash": "QmWWH69mTL66r3H8P4wUn24t1L5pvdTJGUTKBqT11KCHS5"
-  },
-  {
-    "id": 2,
-    "name": "Testing",
-    "price": "0.05",
-    "image_url": "https://media.discordapp.net/attachments/862081230212169758/978783723141099560/IMG_6190.png",
-    "description": "Alguna descripcion de prueba",
-    "filename": "Claro Video-web.zip",
-    "hash": "Qmbfxns72xpTtYJMUXdC3tQKoe7Ctc6Y8LYyK9CmhNR172"
-  },
-  {
-    "id": 3,
-    "name": "Testing 02",
-    "price": "0.05",
-    "image_url": "https://media.discordapp.net/attachments/862081230212169758/978783723480825956/IMG_6188.jpg",
-    "description": "Hola chef",
-    "filename": "webOS_DRM_Sample_Code (1).zip",
-    "hash": "QmSwTcksqZtFdLAAYhAf4f1VU6ZCLNdefAwMW8kYFyukQL"
-  },
-  {
-    "id": 4,
-    "name": "ALgo",
-    "price": "0.05",
-    "image_url": "https://media.discordapp.net/attachments/862081230212169758/978783723480825956/IMG_6188.jpg",
-    "description": "sfsdfsdf",
-    "filename": "metapress.zip",
-    "hash": "QmTZ65mmqcKz4MWAr962nePkSn7M2qwoKHeKn8pnaCPSWF"
-  },
-  {
-    "id": 5,
-    "name": "Auslander",
-    "price": "0.01",
-    "image_url": "https://media.discordapp.net/attachments/862081230212169758/978783723141099560/IMG_6190.png",
-    "description": "Aguante Rammstein"
-  },
-  {
-    "id": 6,
-    "name": "Hola Mundo",
-    "price": "0.02",
-    "image_url": "https://media.discordapp.net/attachments/862081230212169758/978783723141099560/IMG_6190.png",
-    "description": "dsfsdfsdf"
-  },
-  {
     "id": 7,
     "name": "Chef test",
-    "price": "0.02",
-    "image_url": "https://onlinepngtools.com/images/examples-onlinepngtools/black-white-grid.png",
+    "price": "0.01",
+    "image_url": "https://media.discordapp.net/attachments/862081230212169758/978783722922987560/IMG_6189.jpg",
     "description": "dfsdfsdfdfsdfsdf"
   }
 ]

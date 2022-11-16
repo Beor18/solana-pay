@@ -57,7 +57,7 @@ export default function Footer() {
         justify={{ base: 'center', md: 'center' }}
         align={{ base: 'center', md: 'center' }}
       >
-        <Text>© 2022 Chef and Beor</Text>
+        <Text>© 2022</Text>
         <Stack direction={'row'} spacing={6}>
           {/* <SocialButton label={'Twitter'} href={'#'}>
             <FaTwitter />

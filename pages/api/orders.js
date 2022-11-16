@@ -25,8 +25,7 @@ async function post(req, res) {
     if (
       !orders.find(
         (order) =>
-          order.buyer === newOrder.buyer.toString() &&
-          order.itemID === newOrder.itemID,
+          order.orderID === newOrder.orderID,
       )
     ) {
       orders.push(newOrder)
