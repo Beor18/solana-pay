@@ -67,15 +67,6 @@ export const ProductsCreate = () => {
         <Heading color="white" fontSize="30px">Create Product</Heading>
           <br />
           <FormControl>
-            <Input
-              type="file"
-              accept=".jpeg,.jpg,.png"
-              placeholder="Product"
-              onChange={onChange}
-            />
-            <br/>
-            {file.name != null && <p className="file-name">{file.filename}</p>}
-            <br/>
             <div>
               <Input
                 type="text"

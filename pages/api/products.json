@@ -1,9 +1,10 @@
 [
   {
-    "id": 7,
-    "name": "Chef test",
-    "price": "0.01",
+    "id": 9,
+    "name": "Beor Test",
+    "price": "0.03",
+    "numberFix": 7.03,
     "image_url": "https://media.discordapp.net/attachments/862081230212169758/978783722922987560/IMG_6189.jpg",
-    "description": "dfsdfsdfdfsdfsdf"
+    "description": "Product test"
   }
 ]

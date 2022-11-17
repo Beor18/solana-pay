@@ -1,11 +1,10 @@
+import axios from 'axios';
 import products from './products.json';
 
 export default async function handler(req, res) {
-    // If get request
     if (req.method === 'GET') {
-        // Create a copy of products without the hashes and filenames
         const productsNoHashes = products.map((product) => {
-            const { hash, filename, ...rest } = product;
+            const { ...rest } = product;
             return rest;
         });
 

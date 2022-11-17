@@ -51,8 +51,8 @@ export default function Buy({ itemID }) {
             const txHashTwo = await sendTransaction(txTwo, connection);
             await connection.confirmTransaction(txHashTwo);
             const txHash = await sendTransaction(tx, connection);
-            const pepe = await connection.confirmTransaction(txHash);
-            console.log("Fernando PEPE: ", pepe)
+            await connection.confirmTransaction(txHash);
+            
             console.log(
                 `Transaction sent: https://solscan.io/tx/${txHash}?cluster=devnet`
             );
@@ -65,9 +65,6 @@ export default function Buy({ itemID }) {
     };
 
     useEffect(() => {
-        // Check if this address already has already purchased this item
-        // If so, fetch the item and set paid to true
-        // Async function to avoid blocking the UI
         async function checkPurchased() {
             const purchased = await hasPurchased(publicKey, itemID);
             if (purchased) {

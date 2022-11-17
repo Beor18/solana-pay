@@ -1,12 +1,14 @@
 import { Box } from '@chakra-ui/react';
 
-export const BoxPrice = ({ price, currency = 'FLWR' }) => {
+export const BoxPrice = ({ price, priceFixed, currency = 'USDC', flwr= 'FLWR' }) => {
     return (
         <Box fontSize='2xl' color={'#FFFCF0'}>
             <Box as='span' color={'#FFFCF0'} fontSize='lg' pr={1}>
-                {currency}
+            {price} - {currency}
             </Box>
-            {price}
+            <Box as='span' color={'#FFFCF0'} fontSize='lg' pr={1}>
+            // {priceFixed} - {flwr}
+            </Box>
         </Box>
     );
 };
