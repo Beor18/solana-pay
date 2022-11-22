@@ -5,7 +5,7 @@ export default async function currency(req, res) {
     if (req.method === 'GET') {
         
         const query = req.query
-        const {from, to} = query
+        const {fsym, tsyms} = query
         // console.log("QUERY: ", query)
         // const USDC = 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v';
         // const FLWR = 'FLWRna1gxehQ9pSyZMzxfp4UhewvLPwuKfdUTgdZuMBY';
@@ -14,7 +14,7 @@ export default async function currency(req, res) {
         // const converNumber = bigAmount.toNumber() * 1000 ** 2;
         
         const response = await axios.get(
-            `https://price.jup.ag/v1/price?id=USDC&vsToken=FLWR`
+            `https://price.jup.ag/v1/price?id=USDC&vsToken=${tsyms}`
         );
 
         const priceFLWR = response.data.data.price;
@@ -22,7 +22,8 @@ export default async function currency(req, res) {
         //const numberFix = Number(priceFLWR).toFixed()
         
         let newRest = {
-            FLWR: parseInt(priceFLWR)
+            FLWR: parseInt(priceFLWR),
+            SOL: tsyms === 'SOL' ? priceFLWR : null
         }
 
         res.status(200).json(newRest);
