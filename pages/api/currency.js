@@ -12,19 +12,17 @@ export default async function currency(req, res) {
 
         const bigAmount = BigNumber(amount);
         const converNumber = bigAmount.toNumber() * 1000 ** 2;
-        console.log("converNumber: ", converNumber)
         
         const response = await axios.get(
-            `https://quote-api.jup.ag/v3/quote?inputMint=${USDC}&outputMint=${FLWR}&amount=${converNumber}&slippageBps=50&feeBps=4`
+            `https://api.coingecko.com/api/v3/simple/price?ids=sol-flowers&vs_currencies=usd`
         );
 
-        console.log("Response: ", response)
-        const priceFLWR = response.data.data[0].outAmount;
+        const priceFLWR = response.data["sol-flowers"].usd;
 
-        const numberFix = Number(priceFLWR).toFixed() / 100
+        //const numberFix = Number(priceFLWR).toFixed()
         
         let newRest = {
-            FLWR: numberFix
+            USD: priceFLWR
         }
 
         res.status(200).json(newRest);
