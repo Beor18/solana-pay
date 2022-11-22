@@ -23,7 +23,7 @@ export default async function currency(req, res) {
         
         let newRest = {
             FLWR: parseInt(priceFLWR),
-            SOL: tsyms === 'SOL' ? priceFLWR : null
+            SOL: tsyms === 'SOL' ? priceFLWR : null,
             USDC: tsyms === 'USDC' ? priceFLWR : null
         }
 
