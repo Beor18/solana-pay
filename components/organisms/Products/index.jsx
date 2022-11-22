@@ -14,8 +14,9 @@ import { Badges } from '../../atoms/Badge';
 import { BoxPrice } from '../../atoms/BoxPrice';
 
 export default function Product({ product }) {
-    const { id, name, price, numberFix, description, image_url } = product;
+    const { id, name, price, numberFix, description, image_url } = product.rest;
 
+    console.log("Product: ", product)
     return (
         <Flex p={5} w='full' alignItems='center' justifyContent='center'>
             <Box
@@ -39,7 +40,7 @@ export default function Product({ product }) {
                     <Flex justifyContent='space-between' alignContent='center'>
                         {/* {description} */}
                         <Buy itemID={id} />
-                        <BoxPrice price={price} priceFixed={numberFix} />
+                        <BoxPrice price={price} priceFixed={product?.newPrice} />
                     </Flex>
                 </Box>
             </Box>
