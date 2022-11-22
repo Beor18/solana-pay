@@ -5,19 +5,19 @@ export default async function currency(req, res) {
     if (req.method === 'GET') {
         
         const query = req.query
-        const {amount} = query
+        const {from, to} = query
         // console.log("QUERY: ", query)
-        const USDC = 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v';
-        const FLWR = 'FLWRna1gxehQ9pSyZMzxfp4UhewvLPwuKfdUTgdZuMBY';
+        // const USDC = 'EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v';
+        // const FLWR = 'FLWRna1gxehQ9pSyZMzxfp4UhewvLPwuKfdUTgdZuMBY';
 
-        const bigAmount = BigNumber(amount);
-        const converNumber = bigAmount.toNumber() * 1000 ** 2;
+        // const bigAmount = BigNumber(amount);
+        // const converNumber = bigAmount.toNumber() * 1000 ** 2;
         
         const response = await axios.get(
-            `https://api.coingecko.com/api/v3/simple/price?ids=sol-flowers&vs_currencies=usd`
+            `https://price.jup.ag/v1/price?id=USDC&vsToken=FLWR`
         );
 
-        const priceFLWR = response.data["sol-flowers"].usd;
+        const priceFLWR = response.data.data.price;
 
         //const numberFix = Number(priceFLWR).toFixed()
         
