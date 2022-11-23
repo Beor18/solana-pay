@@ -22,7 +22,7 @@ export default async function currency(req, res) {
         //const numberFix = Number(priceFLWR).toFixed()
         
         let newRest = {
-            FLWR: parseInt(priceFLWR),
+            FLWR: priceFLWR,
             SOL: tsyms === 'SOL' ? priceFLWR : null,
             USDC: tsyms === 'USDC' ? priceFLWR : null
         }
