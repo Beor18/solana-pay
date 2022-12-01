@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react'
 import { create } from 'ipfs-http-client'
 import { Box } from '@chakra-ui/react'
+import { createProduct } from '../../../services/CreateProduct/CreateProduct'
 
 const client = create('https://ipfs.infura.io:5001/api/v0')
 
@@ -35,29 +36,6 @@ export const ProductsCreate = () => {
       console.log('Error uploading file: ', error)
     }
     setUploading(false)
-  }
-
-  const createProduct = async () => {
-    try {
-      // Combine product data and file.name
-      const product = { ...newProduct, ...file }
-      console.log('Sending product to api', product)
-      const response = await fetch('../api/addProduct', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(product),
-      })
-      const data = await response.json()
-      if (response.status === 200) {
-        alert('Product added!')
-      } else {
-        alert('Unable to add product: ', data.error)
-      }
-    } catch (error) {
-      console.log(error)
-    }
   }
 
   return (
@@ -107,7 +85,7 @@ export const ProductsCreate = () => {
             <br />
             <Button
               onClick={() => {
-                createProduct()
+                createProduct(newProduct, file)
               }}
               disabled={uploading}
             >

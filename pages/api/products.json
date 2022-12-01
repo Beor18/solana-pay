@@ -6,5 +6,13 @@
     "numberFix": 7.03,
     "image_url": "https://media.discordapp.net/attachments/862081230212169758/978783722922987560/IMG_6189.jpg",
     "description": "Product test"
+  },
+  {
+    "id": 10,
+    "name": "Testing Chef Product",
+    "price": "0.01",
+    "numberFix": 2.29,
+    "image_url": "https://media.discordapp.net/attachments/862081230212169758/978783722922987560/IMG_6189.jpg",
+    "description": "Una prueba"
   }
 ]

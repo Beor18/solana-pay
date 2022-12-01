@@ -1,6 +1,6 @@
 import { Box } from '@chakra-ui/react'
 import React from 'react'
-import useIPFS from '../hooks/useIPFS'
+import useIPFS from '../../../hooks/useIPFS'
 
 const IPFSDownload = ({ hash, filename }) => {
   const file = useIPFS(hash, filename)

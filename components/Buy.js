@@ -3,8 +3,8 @@ import { Keypair, Transaction } from '@solana/web3.js';
 import { findReference, FindReferenceError } from '@solana/pay';
 import { useConnection, useWallet } from '@solana/wallet-adapter-react';
 import { InfinitySpin } from 'react-loader-spinner';
-import IPFSDownload from './IpfsDownload';
-import { addOrder, hasPurchased, fetchItem } from '../lib/api';
+import IPFSDownload from './organisms/IpfsDownload/IpfsDownload';
+import { addOrder, hasPurchased, fetchItem } from '../services/Order/Order';
 import { Button, useToast } from '@chakra-ui/react';
 
 const STATUS = {
