@@ -17,7 +17,7 @@
     "clean": "shx rm -rf .next",
     "dev": "next dev",
     "build": "yarn clean && next build",
-    "start": "next start",
+    "start": "next start -p 4010",
     "lint": "next lint"
   },
   "dependencies": {
