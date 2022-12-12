@@ -29,8 +29,8 @@ export default function Home() {
             `/api/collection?collection=${newProduct}`
         );
 
-        if (response.status === 200) {
-            setUrl(response.data.message);
+        if (response?.status === 200 || 304) {
+            setUrl(response?.data.message);
             setLoading(false);
         }
     };
@@ -51,9 +51,11 @@ export default function Home() {
             <Text>
                 {' '}
                 Copiar el token address de cualquier NFT
-                <strong>(14YXjPskLohH1Wbaz258zP1WKEpKQrWXhHvtJ4aJgdDP) </strong> y pegar en el
-                input de abajo para generar el archivo .json <br /> con toda la
-                coleccion
+                <strong>
+                    (14YXjPskLohH1Wbaz258zP1WKEpKQrWXhHvtJ4aJgdDP){' '}
+                </strong>{' '}
+                y pegar en el input de abajo para generar el archivo .json{' '}
+                <br /> con toda la coleccion
             </Text>
             <Box>
                 <FormControl>
@@ -66,15 +68,18 @@ export default function Home() {
                     />
                     <br />
                     <br />
-                    <Button onClick={DownloadJson}>
-                        {url !== '' || undefined ? (
-                            <a href={`collections/${url}`} download>
-                                Download JSON
-                            </a>
-                        ) : (
-                            'Generate JSON'
-                        )}
-                    </Button>
+
+                    {url !== '' || undefined ? (
+                        <a
+                            href={`collections/${url}`}
+                            target='__blank'
+                            download
+                        >
+                            Download JSON
+                        </a>
+                    ) : (
+                        <Button onClick={DownloadJson}>Generate JSON</Button>
+                    )}
                 </FormControl>
             </Box>
         </Box>

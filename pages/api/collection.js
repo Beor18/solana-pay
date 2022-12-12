@@ -27,20 +27,21 @@ export default async function collection(req, res) {
                 headers: {
                     accept: 'application/json',
                     'X-API-KEY':
-                        'ferragnar19_sk_d5ad07c0-66e0-430a-a51f-ccce31e3958e_kuyosvzvsezacabi',
+                        'ferragnar19_sk_d5ad07c0-66e0-430a-a51f-ccce31e3958e_mpi8mku53h1wm0od',
                 },
             }
         );
 
         await fs.writeFileSync(
             `./public/collections/${responseList}.json`,
-            JSON.stringify(responseMyNft?.data.nfts)
+            JSON.stringify(responseMyNft?.data.nfts, null, 2)
         );
 
         const url = `${responseList}.json`;
 
         res.status(200).json({
             message: url,
+            status: 200
         });
     } else {
         res.status(405).send(`Method ${req.method} not allowed`);
