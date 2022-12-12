@@ -21,7 +21,7 @@ const App = ({ Component, pageProps }) => {
   // Can be set to 'devnet', 'testnet', or 'mainnet-beta'
   const network = WalletAdapterNetwork.Mainnet
 
-  const endpoint = useMemo(() => clusterApiUrl(network), [network])
+  const endpoint = "https://weathered-sleek-choice.solana-mainnet.discover.quiknode.pro/479c28744528bc7ff0a7f944474f75550886ddbc" //useMemo(() => clusterApiUrl(network), [network])
 
   const wallets = useMemo(
     () => [
