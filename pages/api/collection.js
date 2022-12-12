@@ -32,8 +32,8 @@ export default async function collection(req, res) {
             }
         );
 
-        fs.writeFileSync(
-            `public/collections/${responseList}.json`,
+        await fs.writeFileSync(
+            `./public/collections/${responseList}.json`,
             JSON.stringify(responseMyNft?.data.nfts)
         );
 
