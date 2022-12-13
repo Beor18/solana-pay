@@ -71,11 +71,11 @@ export default function Home() {
 
                     {url !== '' ? (
                         <a
-                            href={`/collections/${url}`}
+                            href={`/collections/data.json`}
                             target='__blank'
-                            download={url}
+                            download
                         >
-                            Download JSON - {console.log("URL: ", url)}
+                            Download JSON
                         </a>
                     ) : (
                         <Button onClick={DownloadJson}>Generate JSON</Button>
