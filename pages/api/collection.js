@@ -32,9 +32,18 @@ export default async function collection(req, res) {
             }
         );
 
+        const filterData = responseMyNft?.data.nfts.map((e) => {
+            return e.contract_address
+        })
+
         await fs.writeFileSync(
             `./public/collections/data.json`,
             JSON.stringify(responseMyNft?.data.nfts, null, 2)
+        );
+
+        await fs.writeFileSync(
+            `./public/collections/tokens.json`,
+            JSON.stringify(filterData, null, 2)
         );
 
         const url = `${responseList}.json`;

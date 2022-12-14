@@ -70,13 +70,26 @@ export default function Home() {
                     <br />
 
                     {url !== '' ? (
-                        <a
-                            href={`/collections/data.json`}
-                            target='__blank'
-                            download
-                        >
-                            Download JSON
-                        </a>
+                        <div>
+                            <Button>
+                                <a
+                                    href={`/collections/data.json`}
+                                    target='__blank'
+                                    download
+                                >
+                                    Download JSON Collection
+                                </a>
+                            </Button>
+                            <Button>
+                                <a
+                                    href={`/collections/tokens.json`}
+                                    target='__blank'
+                                    download
+                                >
+                                    Download JSON Tokens
+                                </a>
+                            </Button>
+                        </div>
                     ) : (
                         <Button onClick={DownloadJson}>Generate JSON</Button>
                     )}
